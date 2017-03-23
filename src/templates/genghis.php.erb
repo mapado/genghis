@@ -11,8 +11,7 @@
  */
 define('GENGHIS_VERSION', <%= GENGHIS_VERSION.inspect %>);
 
-<% includes.each do |inc| %><%= inc.sub(/(^<\?php\n|\?>\n?$)/, '').strip %>
-<% end %>
+include ('./vendor/autoload.php');
 
 $app = new Genghis_App(new Genghis_AssetLoader_Inline(__FILE__, __COMPILER_HALT_OFFSET__));
 $app->run();

@@ -94,7 +94,7 @@ class Genghis_Api extends Genghis_App
         $alerts = array();
 
         // check php status
-        if (!class_exists('Mongo', false)) {
+        if (!class_exists('Mongo', false) && !extension_loaded('mongodb')) {
             $alerts[] = array(
                 'level' => 'error',
                 'msg'   => '<h4>Mongo PHP class not found.</h4> ' .
